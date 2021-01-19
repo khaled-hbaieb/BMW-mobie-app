@@ -1,11 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Pressable, Button} from 'react-native'
 import styles from './styles'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 // import CarDetails from '../CarDetails'
 import { useNavigation } from '@react-navigation/native';
-
 
 
 
@@ -21,12 +20,13 @@ const  ViewComponent = (props) => {
     const carName = props.carModel
     const image = props.image
     const overView = props.overView
-    console.log(carName, 'carName')
+    const price = props.price
+    const onPurchase = () => navigation.navigate('Purchase', {carName: carName, image, price})
     const onDetails = () => navigation.navigate('CarDetails', {carName: carName, image, overView})
     return (
         <View style={styles.container}>
             <Pressable style={[styles.button, {backgroundColor}]}
-            onPress={type ==='primary' ? onPress : onDetails}
+            onPress={type ==='primary' ? onPurchase : onDetails}
             >
                 <Text style={[styles.text, { color: textColor }]}>{content}</Text>
             </Pressable>

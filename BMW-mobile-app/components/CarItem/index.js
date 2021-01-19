@@ -19,9 +19,7 @@ const overView = props.car.overView
       <Text style={styles.price}>{price}</Text>
       </View>
       <View style={styles.buttonsContainer}>
-      <ButtonComponent type='primary' content='CUSTOM ORDER' onPress={() => {
-        console.warn('CUSTOM ORDER was pressed')
-      }}/>
+      <ButtonComponent type='primary' content='CUSTOM ORDER' carModel={name} image={image} price={price}/>
       <ButtonComponent type='secondary' content='Car Details' carModel={name} image={image} overView={overView}/>
       </View>
     </View>

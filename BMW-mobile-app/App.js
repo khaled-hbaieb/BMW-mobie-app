@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import CarDetails from './components/CarDetails'
+import Purchase from './components/Purchase'
 
 import {
   createDrawerNavigator,
@@ -83,6 +84,7 @@ export default function App() {
       <Stack.Screen name="Home" component={MyDrawer} />
       <Stack.Screen name="Feed" component={Feed} />
         <Stack.Screen name="CarDetails" component={CarDetails} />
+        <Stack.Screen name="Purchase" component={Purchase} />
       </Stack.Navigator>
     </NavigationContainer>
    
